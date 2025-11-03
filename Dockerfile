@@ -17,6 +17,8 @@ RUN apt-get update && \
 RUN cd / && git clone https://github.com/YaQia/parsec-container.git && \
     cd /parsec-container && source env.sh && parsecmgmt -a build
 
+RUN echo "source /parsec-container/env.sh" >> ~/.bashrc
+
 WORKDIR /parsec-container
 CMD ["bash"]
 
